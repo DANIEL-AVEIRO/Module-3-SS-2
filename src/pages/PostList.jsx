@@ -1,6 +1,7 @@
 import React from "react";
 import posts from "../data/posts";
 import LinkButton from "../components/LinkButton";
+import { Link } from "react-router-dom";
 
 const PostList = () => {
   return (
@@ -23,20 +24,22 @@ const PostList = () => {
               </p>
               <p className="text-xl">{post.description}</p>
               <div className="flex flex-row gap-2">
-                <button
+                <Link
+                  to={"/post-update"}
                   className="text-base text-white bg-yellow-600 
                 rounded-sm px-4 py-2 capitalize border border-yellow-600 border-solid cursor-pointer
                 hover:bg-transparent hover:text-yellow-600 duration-300 transition-all"
                 >
                   update
-                </button>
-                <button
+                </Link>
+                <Link
+                  to={"post-delete"}
                   className="text-base text-white bg-red-600 
                 rounded-sm px-4 py-2 capitalize border border-red-600 border-solid cursor-pointer
                 hover:bg-transparent hover:text-red-600 duration-300 transition-all"
                 >
                   delete
-                </button>
+                </Link>
               </div>
             </div>
           );
